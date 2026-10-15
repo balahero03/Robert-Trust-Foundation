@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import trustLogo from './assets/robert_charitable_trust_logo.svg'
 import './App.css'
 
 const navItems = [
@@ -152,13 +153,13 @@ function App() {
 
   return <div className="site-shell">
     <header className="topbar">
-      <button className="brand" onClick={() => navigate('home')} aria-label="The Roberts Charitable Trust home"><img src="/roberts-charitable-trust-logo.png" alt="The Roberts Charitable Trust — Expanding the love boundaries" /></button>
+      <button className="brand" onClick={() => navigate('home')} aria-label="The Roberts Charitable Trust home"><img src={trustLogo} alt="The Roberts Charitable Trust — Expanding the love boundaries" /></button>
       <nav className="nav" aria-label="Main navigation">{navItems.map(([key, label]) => <button className={page === key ? 'active' : ''} key={key} onClick={() => navigate(key)}>{label}</button>)}</nav>
       <button className="nav-cta" onClick={() => navigate('donate')}>Donate now <Arrow /></button>
     </header>
     <main>{pageView()}</main>
     <footer className="footer">
-      <button className="brand footer-brand" onClick={() => navigate('home')} aria-label="The Roberts Charitable Trust home"><img src="/roberts-charitable-trust-logo.png" alt="The Roberts Charitable Trust — Expanding the love boundaries" /></button>
+      <button className="brand footer-brand" onClick={() => navigate('home')} aria-label="The Roberts Charitable Trust home"><img src={trustLogo} alt="The Roberts Charitable Trust — Expanding the love boundaries" /></button>
       <span className="footer-note">Expanding the love boundaries.</span>
       <div className="footer-links"><button onClick={() => navigate('contact')}>Contact</button><button onClick={() => navigate('volunteer')}>Volunteer</button><button onClick={() => navigate('activities')}>Activities</button></div>
       <small>© {new Date().getFullYear()} The Roberts Charitable Trust</small>
