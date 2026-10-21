@@ -1,0 +1,13 @@
+.stats-bar { background: var(--white); padding: 0 24px; margin-top: -32px; position: relative; }
+.stats-grid {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(25, 54, 91, 0.08);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  padding: 32px;
+}
+.stat { text-align: center; }
+.stat strong { display: block; font-size: 30px; color: var(--golden-brown); }
+.stat span { font-size: 14px; color: #3c5574; }
