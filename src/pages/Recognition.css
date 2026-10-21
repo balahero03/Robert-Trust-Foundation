@@ -1,0 +1,81 @@
+.img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 28px;
+  background: var(--pastel-blue);
+  border: 2px dashed rgba(25, 54, 91, 0.25);
+  color: var(--golden-brown);
+}
+.img-placeholder span { font-size: 13px; font-weight: 700; }
+
+/* Awards */
+.award-rows { display: grid; gap: 56px; margin-top: 40px; }
+.award-row { display: grid; grid-template-columns: 340px 1fr; gap: 56px; align-items: center; }
+.award-row-flip { grid-template-columns: 1fr 340px; }
+.award-row-flip .award-photo { order: 2; }
+.award-photo { position: relative; padding: 14px; }
+.award-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--butter-yellow);
+  border-radius: 28px;
+  transform: rotate(-3deg);
+}
+.award-row-flip .award-photo::before { transform: rotate(3deg); }
+.award-img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; }
+.award-ribbon {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--dark-navy);
+  box-shadow: 0 0 0 5px var(--butter-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.award-body h3 { font-size: 30px; font-weight: 800; margin-bottom: 14px; }
+.award-body p:last-child { font-size: 17px; line-height: 1.7; color: #3c5574; max-width: 520px; }
+
+/* Honours */
+.honour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.honour-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--light-blue);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.honour-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(25, 54, 91, 0.1); }
+.honour-img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0; border-width: 0 0 2px; }
+.honour-body { padding: 22px; }
+.honour-body h3 { font-size: 18px; margin: 10px 0 8px; }
+.honour-body p { font-size: 14px; line-height: 1.6; color: #3c5574; }
+.honour-chip {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.chip-featured { background: var(--pastel-blue); color: var(--dark-navy); }
+.chip-speaker { background: var(--dark-navy); color: var(--butter-yellow); }
+.chip-nominated { background: var(--butter-yellow); color: var(--dark-navy); }
+
+@media (max-width: 860px) {
+  .award-row, .award-row-flip { grid-template-columns: 1fr; gap: 28px; }
+  .award-row-flip .award-photo { order: 0; }
+  .award-photo { max-width: 340px; }
+}
