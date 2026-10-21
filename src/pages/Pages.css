@@ -3,7 +3,7 @@
 .page-hero .section-label { margin-bottom: 8px; }
 .page-hero-accent {
   display: block;
-  width: 56px;
+  width: 120px;
   height: 4px;
   border-radius: 4px;
   background: var(--butter-yellow);

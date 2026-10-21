@@ -11,6 +11,7 @@ import './pages/Home.css'
 import './pages/Pages.css'
 import './pages/About.css'
 import './pages/Impact.css'
+import './pages/Recognition.css'
 import './pages/Forms.css'
 
 function App() {

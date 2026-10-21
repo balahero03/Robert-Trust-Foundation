@@ -4,22 +4,22 @@
   gap: 24px;
 }
 
-.about-hero {
+.page-hero {
   background: url('/media/White%20Hearts%20on%20Mint%20Background.png') center / cover no-repeat;
 }
 
-.about-hero .section-label,
-.about-hero h1,
-.about-hero p,
-.about-hero .page-hero-accent {
+.page-hero .section-label,
+.page-hero h1,
+.page-hero p,
+.page-hero .page-hero-accent {
   opacity: 0;
   animation: about-rise 0.8s ease forwards;
 }
-.about-hero h1 { animation-delay: 0.15s; }
-.about-hero p { animation-delay: 0.3s; }
-.about-hero .page-hero-accent { animation: about-grow 0.7s ease 0.5s forwards; }
+.page-hero h1 { animation-delay: 0.15s; }
+.page-hero p { animation-delay: 0.3s; }
+.page-hero .page-hero-accent { animation: about-grow 0.7s ease 0.5s forwards; }
 
-.about-hero .section-label {
+.page-hero .section-label {
   display: inline-block;
   background: var(--white);
   color: var(--golden-brown);
@@ -27,7 +27,7 @@
   border-radius: 999px;
   box-shadow: 0 4px 14px rgba(25, 54, 91, 0.1);
 }
-.about-hero h1 {
+.page-hero h1 {
   font-size: 52px;
   background: linear-gradient(90deg, var(--dark-navy), var(--golden-brown), var(--dark-navy));
   background-size: 200% auto;
@@ -37,7 +37,7 @@
   animation: about-rise 0.8s ease 0.15s forwards, about-shine 6s linear 1s infinite;
   filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.8));
 }
-.about-hero p { text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9); font-weight: 600; }
+.page-hero p { text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9); font-weight: 600; }
 
 @keyframes about-rise {
   from { opacity: 0; transform: translateY(20px); }
@@ -45,16 +45,16 @@
 }
 @keyframes about-grow {
   from { opacity: 0; width: 0; }
-  to { opacity: 1; width: 56px; }
+  to { opacity: 1; width: 120px; }
 }
 @keyframes about-shine {
   to { background-position: 200% center; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .about-hero * { animation: none !important; opacity: 1 !important; }
+  .page-hero * { animation: none !important; opacity: 1 !important; }
 }
 @media (max-width: 760px) {
-  .about-hero h1 { font-size: 38px; }
+  .page-hero h1 { font-size: 38px; }
 }
 
 .founder-sign { margin-top: 20px; font-weight: 700; color: var(--golden-brown); font-style: italic; }

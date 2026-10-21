@@ -24,7 +24,7 @@ const team = [
 function About() {
   return (
     <>
-      <section className="page-hero about-hero">
+      <section className="page-hero">
         <div className="container">
           <p className="section-label">Who We Are</p>
           <h1>About Us</h1>

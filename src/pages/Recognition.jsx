@@ -1,24 +1,34 @@
 import { Link } from 'react-router-dom'
 
+// Set `img` to a path in /public (e.g. '/media/award-1.jpg') to replace a placeholder
 const awards = [
-  { icon: '🏆', year: '2025', title: 'Award Title', from: 'Awarding Organisation', text: 'Recognised for outstanding contribution to child education.' },
-  { icon: '🥇', year: '2024', title: 'Award Title', from: 'Awarding Organisation', text: 'Honoured for community healthcare outreach programmes.' },
-  { icon: '🎖️', year: '2023', title: 'Award Title', from: 'Awarding Organisation', text: 'Acknowledged for excellence in volunteer engagement.' },
-  { icon: '🏅', year: '2022', title: 'Award Title', from: 'Awarding Organisation', text: 'Celebrated for relief work supporting families in need.' },
+  {
+    title: 'Community Champion Award',
+    event: 'Maathare T24 Women of Excellence',
+    text: 'I was honored to receive the Community Champion Award at the Maathare T24 Women of Excellence event.',
+    img: null,
+  },
+  {
+    title: 'Creators for Change Award',
+    event: 'Youth Speak Forum by AIESEC',
+    text: 'I was also honored to receive the Creators for Change Award at the Youth Speak Forum organized by AIESEC.',
+    img: null,
+  },
 ]
 
-const certifications = [
-  { icon: '📜', title: 'Registered Trust', text: 'Registered under the Indian Trusts Act. Registration details to be added.' },
-  { icon: '🧾', title: '80G Certified', text: 'Donations are eligible for tax exemption under Section 80G.' },
-  { icon: '✅', title: '12A Registered', text: 'Recognised as a charitable organisation under Section 12A.' },
+const honours = [
+  { type: 'Featured', source: 'The New Indian Express', text: 'I was honored to be featured in the New Indian Express, Sunday edition.', img: null },
+  { type: 'Featured', source: 'The Better India', text: 'I was also honoured to be featured in an article in BETTER INDIA.', img: null },
+  { type: 'Speaker', source: 'UDAAN by Zing, LPU Punjab', text: 'I was also honoured to be the first TAMIL speaker at the UDAAN by Zing edition held at the Lovely Professional University, Punjab.', img: null },
+  { type: 'Featured', source: 'Eat My News', text: 'I was honoured to be featured in a Global article named “EAT MY NEWS”.', img: null },
+  { type: 'Nominated', source: 'Vikatan Digital Awards 2025', text: 'I was honoured to be nominated as the BEST IMPACT CREATOR at the Vikatan Digital Awards, 2025.', img: null },
 ]
 
-const press = [
-  { quote: 'A shining example of how community-led efforts can transform children’s lives.', name: 'Publication Name', role: 'News Feature, 2025' },
-  { quote: 'The Trust’s health camps have reached families who had never seen a doctor before.', name: 'Publication Name', role: 'Article, 2024' },
-]
-
-const partners = ['Partner Logo', 'Partner Logo', 'Partner Logo', 'Partner Logo', 'Partner Logo', 'Partner Logo']
+function Photo({ src, alt, className }) {
+  return src
+    ? <img src={src} alt={alt} className={className} />
+    : <div className={`img-placeholder ${className}`} role="img" aria-label={`${alt} (image coming soon)`}>📷<span>Image placeholder</span></div>
+}
 
 function Recognition() {
   return (
@@ -27,7 +37,7 @@ function Recognition() {
         <div className="container">
           <p className="section-label">Honours & Trust</p>
           <h1>Recognition</h1>
-          <p>Awards, certifications, and words of support that reflect our commitment to children.</p>
+          <p>Awards and moments of recognition that reflect our commitment to being the change.</p>
           <span className="page-hero-accent" />
         </div>
       </section>
@@ -35,18 +45,22 @@ function Recognition() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <p className="section-label">Awards</p>
-            <h2 className="section-title">Honours We’ve Received</h2>
+            <p className="section-label">01 · Awards</p>
+            <h2 className="section-title">Awards Received</h2>
           </div>
-          <div className="card-grid">
-            {awards.map((a) => (
-              <div key={a.year} className="card award-card card-hover">
-                <div className="award-medal">{a.icon}</div>
-                <span className="award-year">{a.year}</span>
-                <h3>{a.title}</h3>
-                <p className="card-meta">{a.from}</p>
-                <p>{a.text}</p>
-              </div>
+          <div className="award-rows">
+            {awards.map((a, i) => (
+              <article key={a.title} className={`award-row ${i % 2 ? 'award-row-flip' : ''}`}>
+                <div className="award-photo">
+                  <Photo src={a.img} alt={a.title} className="award-img" />
+                  <span className="award-ribbon">🏆</span>
+                </div>
+                <div className="award-body">
+                  <p className="card-meta">{a.event}</p>
+                  <h3>{a.title}</h3>
+                  <p>{a.text}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
@@ -55,48 +69,20 @@ function Recognition() {
       <section className="section section-alt">
         <div className="container">
           <div className="section-head">
-            <p className="section-label">Accreditation</p>
-            <h2 className="section-title">Certified & Transparent</h2>
-            <p className="section-text">We follow strict governance and compliance so every donor can give with confidence.</p>
+            <p className="section-label">02 · Honours & Recognition</p>
+            <h2 className="section-title">Featured, Spoken & Nominated</h2>
           </div>
-          <div className="card-grid">
-            {certifications.map((c) => (
-              <div key={c.title} className="card card-white">
-                <div className="card-icon">{c.icon}</div>
-                <h3>{c.title}</h3>
-                <p>{c.text}</p>
-              </div>
+          <div className="honour-grid">
+            {honours.map((h) => (
+              <article key={h.text} className="honour-card">
+                <Photo src={h.img} alt={h.source} className="honour-img" />
+                <div className="honour-body">
+                  <span className={`honour-chip chip-${h.type.toLowerCase()}`}>{h.type}</span>
+                  <h3>{h.source}</h3>
+                  <p>{h.text}</p>
+                </div>
+              </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <p className="section-label">In the News</p>
-            <h2 className="section-title">What Others Say</h2>
-          </div>
-          <div className="card-grid">
-            {press.map((p, i) => (
-              <div key={i} className="card quote-card">
-                <blockquote>{p.quote}</blockquote>
-                <p className="quote-name">{p.name}</p>
-                <p className="quote-role">{p.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-head">
-            <p className="section-label">Partners</p>
-            <h2 className="section-title">Organisations That Stand With Us</h2>
-          </div>
-          <div className="logo-strip">
-            {partners.map((p, i) => <div key={i} className="logo-tile">{p}</div>)}
           </div>
         </div>
       </section>
@@ -105,8 +91,8 @@ function Recognition() {
         <div className="container">
           <div className="cta-band">
             <div>
-              <h2>Partner with us</h2>
-              <p>Join the organisations and individuals helping us expand the love boundaries.</p>
+              <h2>Be part of the change</h2>
+              <p>Join us in spreading love and creating a brighter future for every child.</p>
             </div>
             <div className="cta-actions">
               <Link to="/volunteer" className="btn btn-primary">Get Involved</Link>
