@@ -29,7 +29,7 @@ function Home() {
             Together, we can create meaningful change in the lives of children and communities.
           </p>
           <div className="hero-actions">
-            <a href="#donate" className="btn btn-primary">Donate Now</a>
+            <a href="#donate" className="btn btn-primary">Donate</a>
             <Link to="/about" className="btn btn-outline-light">Learn More</Link>
           </div>
         </div>
