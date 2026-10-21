@@ -28,7 +28,7 @@ function Navbar() {
             </NavLink>
           ))}
         </nav>
-        <a href="#donate" className="btn btn-primary navbar-cta">Donate Now</a>
+        <a href="#donate" className="btn btn-primary navbar-cta">Donate</a>
       </div>
     </header>
   )

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from '../assets/robert_trust_logo.jpeg'
 import './Footer.css'
 
 function Footer() {
@@ -6,7 +7,10 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div>
-          <h3>The Roberts Charitable Trust</h3>
+          <div className="footer-brand">
+            <img src={logo} alt="The Roberts Charitable Trust" />
+            <h3>The Roberts Charitable Trust</h3>
+          </div>
           <p>Expanding the love boundaries through care, education, and opportunity for children.</p>
         </div>
         <div>

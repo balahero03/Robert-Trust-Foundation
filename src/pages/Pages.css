@@ -68,6 +68,15 @@
 .card-link { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 700; color: var(--golden-brown); }
 .card-link:hover { color: var(--dark-navy); }
 
+/* Pillar cards (subtle accent per category) */
+.pillar-card {
+  position: relative;
+  border-top: 3px solid var(--accent, var(--butter-yellow));
+}
+.pillar-card .card-icon {
+  background: color-mix(in srgb, var(--accent, var(--butter-yellow)) 22%, var(--white));
+}
+
 /* Timeline */
 .timeline { position: relative; margin-top: 40px; max-width: 760px; margin-left: auto; margin-right: auto; }
 .timeline::before {
@@ -152,20 +161,44 @@
 .progress-fill { height: 100%; border-radius: 10px; background: var(--butter-yellow); }
 
 /* Testimonials / quotes */
-.quote-card { position: relative; padding-top: 44px; }
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.quote-card {
+  position: relative;
+  min-height: 340px;
+  padding: 28px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--white);
+}
 .quote-card::before {
   content: '“';
   position: absolute;
-  top: 6px;
+  top: 20px;
   left: 24px;
-  font-size: 64px;
+  font-size: 56px;
   line-height: 1;
   color: var(--butter-yellow);
   font-weight: 800;
 }
-.quote-card blockquote { font-size: 15px; line-height: 1.7; color: #3c5574; margin-bottom: 16px; }
-.quote-name { font-weight: 700; font-size: 15px; }
-.quote-role { font-size: 13px; color: var(--golden-brown); }
+.quote-card blockquote { font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
+.quote-name { font-weight: 700; font-size: 15px; color: var(--white); }
+.quote-role { font-size: 13px; color: var(--butter-yellow); }
+
+@media (max-width: 900px) {
+  .quote-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .quote-grid { grid-template-columns: 1fr; }
+}
 
 /* Awards */
 .award-card { text-align: center; }
@@ -212,6 +245,40 @@
   color: var(--golden-brown);
   text-align: center;
   padding: 8px;
+}
+
+/* Initiative stories */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-top: 32px;
+}
+.story-card { overflow: hidden; padding: 40px; }
+.story-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: -40px -40px 28px;
+}
+.story-images img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.story-images img:only-child {
+  grid-column: 1 / -1;
+  height: 460px;
+}
+.story-card h3 { font-size: 26px; }
+.story-card p { font-size: 17px; max-width: 760px; }
+
+@media (max-width: 760px) {
+  .story-card { padding: 24px; }
+  .story-images { margin: -24px -24px 20px; }
+  .story-images img { height: 240px; }
+  .story-images img:only-child { height: 260px; }
 }
 
 /* Tags */

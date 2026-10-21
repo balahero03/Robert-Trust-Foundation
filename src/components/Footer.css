@@ -9,7 +9,9 @@
   grid-template-columns: 2fr 1fr 1fr;
   gap: 32px;
 }
-.footer h3 { font-size: 18px; margin-bottom: 12px; color: var(--white); }
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.footer-brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.footer h3 { font-size: 18px; margin-bottom: 0; color: var(--white); }
 .footer h4 { font-size: 15px; margin-bottom: 12px; color: var(--butter-yellow); }
 .footer p { font-size: 14px; line-height: 1.7; color: var(--pastel-blue); margin-bottom: 4px; }
 .footer ul li { margin-bottom: 8px; }
