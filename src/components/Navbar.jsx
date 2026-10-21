@@ -5,11 +5,10 @@ import './Navbar.css'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/our-work', label: 'Our Work' },
-  { to: '/activities', label: 'Activities' },
+  { to: '/initiatives', label: 'Initiatives' },
   { to: '/impact', label: 'Impact' },
+  { to: '/recognition', label: 'Recognition' },
   { to: '/volunteer', label: 'Volunteer' },
-  { to: '/contact', label: 'Contact' },
 ]
 
 function Navbar() {

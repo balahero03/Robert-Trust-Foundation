@@ -3,12 +3,12 @@ import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
-import OurWork from './pages/OurWork.jsx'
-import Activities from './pages/Activities.jsx'
+import Initiatives from './pages/Initiatives.jsx'
 import Impact from './pages/Impact.jsx'
+import Recognition from './pages/Recognition.jsx'
 import Volunteer from './pages/Volunteer.jsx'
-import Contact from './pages/Contact.jsx'
 import './pages/Home.css'
+import './pages/Pages.css'
 import './pages/About.css'
 import './pages/Impact.css'
 import './pages/Forms.css'
@@ -21,11 +21,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/our-work" element={<OurWork />} />
-          <Route path="/activities" element={<Activities />} />
+          <Route path="/initiatives" element={<Initiatives />} />
           <Route path="/impact" element={<Impact />} />
+          <Route path="/recognition" element={<Recognition />} />
           <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
